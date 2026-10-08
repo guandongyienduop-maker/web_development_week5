@@ -1,0 +1,263 @@
+/* CSS THEME VARIABLES/*
+ */ :root { --brand-color: #172554;
+     --accent-color: #2563eb;
+     --surface-color: #f4f6f8;
+     --primary-text: #1f2937;
+      --secondary-text: #6b7280;
+       --card-color: #ffffff;
+        --light-text: #dbeafe; }
+
+/* BASIC RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--surface-color);
+    color: var(--primary-text);
+}
+
+
+/* MAIN DASHBOARD LAYOUT */
+
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    background-color: #172554;
+    color: white;
+    padding: 30px 20px;
+}
+
+.logo {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navigation a {
+    color: #dbeafe;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  background-color: var(--accent-color);
+  color: var(--card-color)
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    padding: 30px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.header h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+.header p{
+color: var(--secondary-text); }
+
+
+/* =========================
+   USER PROFILE
+========================= */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color:  var(--card-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   CATEGORY SECTION
+========================= */
+
+.category-section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================
+   CATEGORY CARD
+========================= */
+
+.category-card {
+    background-color: var(--card-color);
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transition: transform 0.2s ease;
+}
+/* Remove the default focus outline and add a visible one */ 
+.category-card:focus {
+     outline: 2px solid var(--accent-color); 
+     outline-offset: 3px;}
+
+.category-card:hover {
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.category-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.amount {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.description {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 767px) {
+    
+/* Change dashboard to one column */
+ .dashboard { grid-template-columns: 1fr; }
+ 
+ /* Adjust main content spacing */
+ 
+ .main-content { padding: 20px; }
+  /* Stack header content */
+
+   .header { flex-direction: column; 
+    align-items: flex-start; 
+    gap: 15px; }
+     
+     /* Display cards in one column */
+      .category-grid { grid-template-columns: 1fr; }
+
+    
+
+   } 
+
+/* =========================
+   DARK THEME - STRETCH GOAL
+========================= */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand-color: #0f172a;
+        --accent-color: #3b82f6;
+        --surface-color: #111827;
+        --primary-text: #f9fafb;
+        --secondary-text: #9ca3af;
+        --card-color: #1f2937;
+        --light-text: #dbeafe;
+
+    }
+}
+
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
